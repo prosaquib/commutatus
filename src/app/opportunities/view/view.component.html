@@ -1,0 +1,52 @@
+    <div class="panel panel-default panel-table">        
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-6">
+                    <h3 class="panel-title">Opportunities</h3>
+                </div>
+            <!-- <div class="col col-xs-6 text-right">
+                <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
+            </div> -->
+                    </div>
+                        </div>
+                        <div class="panel-body">                            
+                            <table class="table table-striped table-bordered table-list">
+                        <thead>
+                            <tr>
+                                <th><em class="fa fa-cog"></em></th>                                
+                                <th>Title</th>
+                                <th>app_close_date</th>
+                                <th>app_start_date</th>
+                                <th>latest_end_date</th>
+                                <th>description</th>
+                                <th>backgrounds</th>
+                                <th>skills</th>
+                                <th>selection_process</th>
+                                <th>salary</th>
+                                <th>city</th>    
+                            </tr> 
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td align="center">
+                                    <a class="btn btn-default" routerLink = '/opportunity-update/{{opportunitData.id}}'><em class="fa fa-pencil"></em></a>
+                                    <!-- <a class="btn btn-danger"><em class="fa fa-trash"></em></a> -->
+                                    </td>                                    
+                                    <td>{{opportunitData.title}}</td>
+                                    <td>{{opportunitData.applications_close_date|date:'d MMM y'}}</td>
+                                    <td>{{opportunitData.earliest_start_date|date:'d MMM y'}}</td>
+                                    <td>{{opportunitData.latest_end_date|date:'d MMM y'}}</td>
+                                    <td>{{opportunitData.description}}</td>
+                                    <td></td>
+                                    <td><span *ngFor="let skill of opportunitData.skills"><strong>{{skill.name}}</strong></span>
+                                        <!-- <span>{{skill.name}}</span> -->
+                                        <!-- <span>{{opportunitData.skills[1].name}}</span> -->
+                                        </td>
+                                    <td>{{opportunitData.selection_process}}</td>
+                                    <td>{{opportunitData.salary}}</td>
+                                    <td>{{opportunitData.role_info.city}}</td>                                    
+                                </tr>
+                                </tbody>
+                        </table>
+                    
+                    </div>
