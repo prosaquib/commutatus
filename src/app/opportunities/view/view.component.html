@@ -9,7 +9,8 @@
             </div> -->
                     </div>
                         </div>
-                        <div class="panel-body">                            
+                        <div class="panel-body">  
+                            <div class="table-responsive">                          
                             <table class="table table-striped table-bordered table-list">
                         <thead>
                             <tr>
@@ -29,24 +30,28 @@
                         <tbody>
                                 <tr>
                                     <td align="center">
-                                    <a class="btn btn-default" routerLink = '/opportunity-update/{{opportunitData.id}}'><em class="fa fa-pencil"></em></a>
+                                    <a class="btn btn-default" routerLink ="/opportunity-update/{{opportunitData?.id}}" ><em class="fa fa-pencil"></em></a>
                                     <!-- <a class="btn btn-danger"><em class="fa fa-trash"></em></a> -->
                                     </td>                                    
-                                    <td>{{opportunitData.title}}</td>
-                                    <td>{{opportunitData.applications_close_date|date:'d MMM y'}}</td>
-                                    <td>{{opportunitData.earliest_start_date|date:'d MMM y'}}</td>
-                                    <td>{{opportunitData.latest_end_date|date:'d MMM y'}}</td>
-                                    <td>{{opportunitData.description}}</td>
-                                    <td></td>
-                                    <td><span *ngFor="let skill of opportunitData.skills"><strong>{{skill.name}}</strong></span>
+                                    <td>{{opportunitData?.title}}</td>
+                                    <td>{{opportunitData?.applications_close_date|date:'d MMM y'}}</td>
+                                    <td>{{opportunitData?.earliest_start_date|date:'d MMM y'}}</td>
+                                    <td>{{opportunitData?.latest_end_date|date:'d MMM y'}}</td>
+                                    <td>{{opportunitData?.description}}</td>
+                                    <td>
+                                        <ng-container *ngFor="let background of opportunitData?.backgrounds"><strong>{{background.name}}</strong></ng-container>
+                                    </td>
+                                    <td><span *ngFor="let skill of opportunitData?.skills"><strong>{{skill.name}}</strong></span>
                                         <!-- <span>{{skill.name}}</span> -->
                                         <!-- <span>{{opportunitData.skills[1].name}}</span> -->
                                         </td>
-                                    <td>{{opportunitData.selection_process}}</td>
-                                    <td>{{opportunitData.salary}}</td>
-                                    <td>{{opportunitData.role_info.city}}</td>                                    
+                                    <td>{{opportunitData?.role_info.selection_process}}</td>
+                                    <td>{{opportunitData?.specifics_info.salary}}</td>
+                                    <td>{{opportunitData?.role_info.city}}</td>                                    
                                 </tr>
                                 </tbody>
                         </table>
+                            </div>
+                        </div>
+    </div>
                     
-                    </div>
