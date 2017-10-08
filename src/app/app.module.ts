@@ -12,6 +12,7 @@ import { DatePipe } from '@angular/common';
 
 import {OpportunityService} from './_services/opportunity.service'
 import {SkillsService} from './_services/skills.service'
+import {BackgroundsService} from './_services/background.service'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {SkillsService} from './_services/skills.service'
     APP_ROUTES,
     
   ],
-  providers: [OpportunityService,DatePipe,SkillsService],
+  providers: [OpportunityService,DatePipe,SkillsService,BackgroundsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
