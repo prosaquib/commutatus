@@ -1,7 +1,7 @@
 <div class="container">
-    <div *ngIf = "result.class" class="{{result.class}}">
+    <div *ngIf="result.class" class="{{result.class}}">
         <strong>{{result.message}}</strong> .
-      </div>
+    </div>
     <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -12,80 +12,108 @@
                 <form class="form-horizontal" (ngSubmit)="opportunityForm.form.valid && onUpdate(opportunityForm.value)" novalidate autocomplete="off"
                     #opportunityForm="ngForm">
                     <div id="div_id_username" class="form-group required">
-                        <label for="id_title" class="control-label col-md-4  requiredField">Title<span class="asteriskField">*</span> </label>
+                        <label for="id_title" class="control-label col-md-4  requiredField">Title
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md  textinput textInput form-control" id="id_title" #title [(ngModel)]="opportunity.title" maxlength="30"
                                 name="title" placeholder="Choose your title" style="margin-bottom: 10px" type="text" required/>
-                                <div *ngIf="title.errors && (title.touched || title.dirty)" class="alert alert-danger">
-                                    <div [hidden]="!title.errors.required">
-                                        Opportunity title is required.
-                                    </div>
+                            <div *ngIf="title.invalid && (title.dirty ||title.touched)" class="alert alert-danger">
+                                <div *ngIf="title.errors.required">
+                                    Opportunity title is required.
                                 </div>
-                        </div>                        
+                            </div>
+                        </div>
                     </div>
                     <div id="div_id_email" class="form-group required">
-                        <label for="id_application_close_date" class="control-label col-md-4  requiredField">Application Close Date<span class="asteriskField">*</span> </label>
+                        <label for="id_application_close_date" class="control-label col-md-4  requiredField">Application Close Date
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md emailinput form-control" id="id_acd" #acd [(ngModel)]="opportunity.applications_close_date" name="application_close_date"
                                 placeholder="Apllication Close Date" style="margin-bottom: 10px" type="text" />
                         </div>
                     </div>
                     <div id="div_id_est" class="form-group required">
-                        <label for="id_est" class="control-label col-md-4  requiredField">Earliest Start Date<span class="asteriskField">*</span> </label>
+                        <label for="id_est" class="control-label col-md-4  requiredField">Earliest Start Date
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md textinput textInput form-control" id="id_est" #ecd [(ngModel)]="opportunity.earliest_start_date" name="earliest_start_date"
                                 placeholder="Earliest start date" style="margin-bottom: 10px" type="text" />
                         </div>
                     </div>
                     <div id="div_id_led" class="form-group required">
-                        <label for="id_led" class="control-label col-md-4  requiredField">Latest End Date<span class="asteriskField">*</span> </label>
+                        <label for="id_led" class="control-label col-md-4  requiredField">Latest End Date
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md textinput textInput form-control" id="id_led" #led [(ngModel)]="opportunity.latest_end_date" name="latest_end_date"
                                 placeholder="Latest End Date" style="margin-bottom: 10px" type="text" />
                         </div>
                     </div>
                     <div id="div_id_description" class="form-group required">
-                        <label for="id_description" class="control-label col-md-4  requiredField">Description<span class="asteriskField">*</span> </label>
+                        <label for="id_description" class="control-label col-md-4  requiredField">Description
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md textinput textInput form-control" id="id_description" #description [(ngModel)]="opportunity.description"
                                 name="description" placeholder="Description" style="margin-bottom: 10px" type="text" />
                         </div>
                     </div>
                     <div id="div_id_skills" class="form-group required">
-                            <label for="id_skills"  class="control-label col-md-4  requiredField"> Skills<span class="asteriskField">*</span> </label>
-                             <div class="controls col-md-8 "  style="margin-bottom: 10px">
-                                <select class="form-control selectpicker show-tick" id="skill" name="skills" #skills="ngModel" [(ngModel)]="opportunity.skills"  multiple>
-                                    <option *ngFor = "let skil of skill" [value] = "skil" >{{skil.name}}</option>                                    
-                                </select>
-                            </div> 
-                        </div>
-                        <div id="div_id_backgrounds" class="form-group required"> 
-                            <label for="id_backgrounds" class="control-label col-md-4  requiredField"> Backgrounds<span class="asteriskField">*</span> </label>
-                            <div class="controls col-md-8 "  style="margin-bottom: 10px">
-                            <select class="form-control selectpicker show-tick" id="background" name="backgrounds" #backgrounds="ngModel" [(ngModel)]="opportunity.backgrounds.name"  multiple>
-                                <option *ngFor = "let backgrounde of background" [value] = "backgrounde.name" >{{backgrounde.name}}</option>                                    
+                        <label for="id_skills" class="control-label col-md-4  requiredField"> Skills
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 " style="margin-bottom: 10px">
+                            <select class="form-control selectpicker show-tick" id="skill" name="skills" #skills="ngModel" [(ngModel)]="opportunity.skills"
+                                multiple>
+                                <option *ngFor="let skil of skill" [value]="skil">{{skil.name}}</option>
                             </select>
                         </div>
-                        </div> 
+                    </div>
+                    <div id="div_id_backgrounds" class="form-group required">
+                        <label for="id_backgrounds" class="control-label col-md-4  requiredField"> Backgrounds
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 " style="margin-bottom: 10px">
+                            <select class="form-control selectpicker show-tick" id="background" name="backgrounds" #backgrounds="ngModel" [(ngModel)]="opportunity.backgrounds"
+                                multiple>
+                                <option *ngFor="let backgrond of background" [value]="backgrond">{{backgrond.name}}</option>
+                            </select>
+                        </div>
+                    </div>
                     <div id="div_id_selection_process" class="form-group required">
-                        <label for="id_selection_process" class="control-label col-md-4  requiredField"> Selection Process<span class="asteriskField">*</span> </label>
+                        <label for="id_selection_process" class="control-label col-md-4  requiredField"> Selection Process
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md textinput textInput form-control" id="id_selection_process" name="selection_process" [(ngModel)]="opportunity.role_info.selection_process"
                                 placeholder="selection_process" style="margin-bottom: 10px" type="text" />
                         </div>
                     </div>
                     <div id="div_id_salary" class="form-group required">
-                        <label for="id_salary" class="control-label col-md-4  requiredField">Salary<span class="asteriskField">*</span> </label>
+                        <label for="id_salary" class="control-label col-md-4  requiredField">Salary
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
                             <input class="input-md textinput textInput form-control" id="id_salary" name="salary" [(ngModel)]="opportunity.specifics_info.salary"
                                 placeholder="Salary" style="margin-bottom: 10px" type="text" />
                         </div>
                     </div>
                     <div id="div_id_city" class="form-group required">
-                        <label for="id_city" class="control-label col-md-4  requiredField"> Your City<span class="asteriskField">*</span> </label>
+                        <label for="id_city" class="control-label col-md-4  requiredField"> Your City
+                            <span class="asteriskField">*</span>
+                        </label>
                         <div class="controls col-md-8 ">
-                            <input class="input-md textinput textInput form-control" id="id_city" [(ngModel)] ="opportunity.role_info.city" name="city" placeholder="City" style="margin-bottom: 10px"
-                                type="text" />
+                            <!-- <input class="input-md textinput textInput form-control" id="id_city" [(ngModel)] ="opportunity.role_info.city" name="city" placeholder="City" style="margin-bottom: 10px"
+                                type="text" /> -->
+                                <div class="form-group">
+                                    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search  [(ngModel)] ="opportunity.role_info.city" name="city">
+                                  </div>
+                                  <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+                                    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                                  </agm-map> -->
                         </div>
                     </div>
 
