@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AgmCoreModule} from '@agm/core';
 
 import { AppComponent } from './app.component';
 import {OpportunityUpdateComponent} from './opportunities/update.component';
@@ -21,6 +22,10 @@ import {BackgroundsService} from './_services/background.service'
     OpportunityViewComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey:"AIzaSyD-bnfD15MX2Lq6hPcPuPiSmDTwlZsJWuE",
+      libraries: ["places"]
+    }),
     BrowserModule,
     FormsModule,
     HttpModule,
