@@ -18,7 +18,7 @@ export class OpportunityViewComponent implements OnInit{
       this.opservice.getOpportunity().subscribe(data=>{
         // console.log(response);
         this.opportunitData = data
-        console.log(this.opportunitData)
+        // console.log(this.opportunitData)
       })
 
       }
