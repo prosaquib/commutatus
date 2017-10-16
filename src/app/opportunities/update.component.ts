@@ -12,6 +12,8 @@ import { BackgroundsService } from '../_services/background.service'
 import { Opportunity } from '../_models/opportunities.model';
 import { Skills } from '../_models/skills.model';
 import { Backgrounds } from '../_models/backgrounds.model'
+import { SpecificsInfo } from '../_models/specifics_info.model'
+import { RoleInfo } from '../_models/role_info.model'
 
 declare var google:any;
 @Component({
