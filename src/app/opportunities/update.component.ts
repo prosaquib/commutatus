@@ -25,6 +25,8 @@ export class OpportunityUpdateComponent implements OnInit {
   title = 'Update';
   opportunityId: number;
   opportunity = new Opportunity()
+  specifics_info = new SpecificsInfo()
+  role_info = new RoleInfo()  
   skills = new Skills();
   skill = [];
   background = [];
