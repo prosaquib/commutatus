@@ -1,5 +1,5 @@
 export class SpecificsInfo {
     constructor (
-        salary?:string
+        public salary?:string
     ){}
 }

@@ -1,6 +1,6 @@
 export class RoleInfo{
     constructor(
-        city?:string,
-        selection_process?:string
+       public city?:string,
+       public selection_process?:string
     ) {}
 }

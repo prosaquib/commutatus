@@ -1,8 +1,8 @@
 export class Backgrounds{
     constructor(
-        id?:string,
-        name?:string,
-        level?:string,
-        option?:string
+       public id?:string,
+       public name?:string,
+       public level?:string,
+       public option?:string
     ){}
 }
