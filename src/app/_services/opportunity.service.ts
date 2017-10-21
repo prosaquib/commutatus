@@ -10,11 +10,11 @@ import 'rxjs/add/observable/throw';
 export class OpportunityService {
     options: RequestOptions;
     headers: Headers;
-    private serverUrl = 'http://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com';
+    private serverUrl = '//gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com';
     constructor(private _http: Http) {
         this.headers = new Headers({
             'Content-Type': 'application/json',
-            'Accept': 'q=0.8;application/json;q=0.9'
+            'Accept': 'q=0.8;application/json;q=0.9',
         });
 
         this.options = new RequestOptions({ headers: this.headers });
